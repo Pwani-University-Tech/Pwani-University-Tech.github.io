@@ -1,3 +1,27 @@
+<!-- 
+
+This HTML file represents the main structure of the Pwani University Tech website. 
+It includes the following sections:
+
+1. Header:
+    - Profile section with an ID of "profile" to display user profile information.
+
+2. Main Content:
+    - Repositories section with an ID of "repos" to display a list of repositories.
+    - Public Members section with an ID of "members" to display a list of public members.
+    - Events section with an ID of "events" to display a list of events.
+    - Teams section with an ID of "teams" to display a list of teams.
+
+3. Side Content:
+    - Live section with an ID of "live" to display live updates or information.
+
+External Resources:
+    - Google Fonts for the Roboto font family.
+    - A linked CSS file named "styles.css" for styling.
+    - A linked JavaScript file named "script.js" for functionality.
+
+The file uses the accordion pattern for sections to toggle visibility of content.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +32,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
+    <header>
         <section id="profile">
             <h2>Profile</h2>
             <div id="profile-info"></div>
         </section>
-        <section id="repos">
-            <h2>Repositories</h2>
-            <ul id="repo-list"></ul>
-        </section>
-        <section id="live">
-            <h2>Live</h2>
-            <ul id="live-list"></ul>
-        </section>
+    </header>
+    <main>
+        <div class="main-content">
+            <section id="repos">
+                <h2><button class="accordion-button">Repositories</button></h2>
+                <div class="accordion-content">
+                    <ul id="repo-list"></ul>
+                </div>
+            </section>
+            <section id="members">
+                <h2><button class="accordion-button">Public Members</button></h2>
+                <div class="accordion-content">
+                    <ul id="members-list"></ul>
+                </div>
+            </section>
+            <section id="events">
+                <h2><button class="accordion-button">Events</button></h2>
+                <div class="accordion-content">
+                    <ul id="events-list"></ul>
+                </div>
+            </section>
+            <section id="teams">
+                <h2><button class="accordion-button">Teams</button></h2>
+                <div class="accordion-content">
+                    <ul id="teams-list"></ul>
+                </div>
+            </section>
+        </div>
+        <div class="side-content">
+            <section id="live">
+                <h2>Live</h2>
+                <ul id="live-list"></ul>
+            </section>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
