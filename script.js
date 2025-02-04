@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const orgName = 'Pwani-University-Tech'; // Replace with your GitHub organization name
-    const token = 'SECRET'; // Placeholder for the GitHub Personal Access Token
+    const token = 'SECRET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'; // Placeholder for the GitHub Personal Access Token
 
     const headers = {
         'Authorization': `token ${token}`
