@@ -1,0 +1,106 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #E0E0E0; /* Light text color */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+
+    #profile {
+        flex: 1;
+        margin-right: 2rem;
+    }
+
+    #repos {
+        flex: 2;
+        margin-right: 2rem;
+    }
+
+    #live {
+        flex: 1;
+    }
+}
+
+@container (max-width: 1200px) {
+    main {
+        flex-direction: column;
+    }
+
+    #profile, #repos, #live {
+        margin-right: 0;
+    }
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: #1E1E1E; /* Darker background for cards */
+    padding: 1rem;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle card shadow */
+}
+
+h2 {
+    border-bottom: 2px solid #BB86FC; /* Light purple border */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #E0E0E0; /* Light text color */
+}
+
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#profile-info img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+#repo-list, #live-list {
+    list-style: none;
+    padding: 0;
+}
+
+#repo-list li, #live-list li {
+    background-color: #1E1E1E; /* Darker background for cards */
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: 2px solid #333; /* Dark border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle card shadow */
+}
+
+a {
+    color: #03DAC6; /* Teal link color */
+    text-decoration: none;
+    font-weight: bold; /* Make links bold */
+}
+
+a:hover {
+    text-decoration: underline;
+}
