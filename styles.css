@@ -1,18 +1,76 @@
+/* 
+
+Styles for the main body of the document:
+- Sets font, margin, padding, background color, text color, and flexbox properties.
+
+Keyframes for gradient animation:
+- Defines a gradient animation for background position.
+
+Styles for the header:
+- Sets width, max-width, padding, and box-sizing.
+
+Styles for the main content area:
+- Sets width, max-width, padding, box-sizing, and flexbox properties.
+
+Media queries for screens wider than 768px:
+- Adjusts flexbox properties for body, header, and main content.
+- Defines styles for main-content and side-content sections.
+
+Media queries for screens narrower than 768px:
+- Adjusts flexbox properties for main content.
+- Resets margin for main-content and side-content sections.
+
+Styles for sections:
+- Sets margin, background color, padding, border-radius, and box-shadow.
+
+Styles for h2 elements:
+- Sets border, padding, margin, and text color.
+
+Styles for profile info section:
+- Sets flexbox properties and text alignment.
+
+Styles for profile images:
+- Sets border-radius and margin.
+
+Styles for repo and live lists:
+- Removes list styling and padding.
+
+Styles for list items in repo and live lists:
+- Sets background color, margin, padding, border, border-radius, and box-shadow.
+
+Styles for anchor tags:
+- Sets color, text-decoration, and font-weight.
+- Adds underline on hover.
+
+Styles for accordion buttons:
+- Removes default button styling and sets custom properties.
+
+Styles for accordion content:
+- Sets display and overflow properties.
+- Toggles display for active state.
+*/
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212; /* Dark background */
+    color: #E0E0E0; /* Light text color */
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #E0E0E0; /* Light text color */
 }
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+header {
+    width: 100%;
+    max-width: 300px;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 main {
@@ -25,31 +83,42 @@ main {
 }
 
 @media (min-width: 768px) {
-    main {
+    body {
         flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
     }
 
-    #profile {
+    header {
         flex: 1;
+        max-width: 300px;
         margin-right: 2rem;
     }
 
-    #repos {
+    main {
+        flex: 2;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main-content {
         flex: 2;
         margin-right: 2rem;
     }
 
-    #live {
+    .side-content {
         flex: 1;
+        min-width: 200px;
     }
 }
 
-@container (max-width: 1200px) {
+@media (max-width: 767px) {
     main {
         flex-direction: column;
     }
 
-    #profile, #repos, #live {
+    .main-content, .side-content {
         margin-right: 0;
     }
 }
@@ -103,4 +172,26 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Accordion styles */
+.accordion-button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.accordion-content {
+    display: none;
+    overflow: hidden;
+}
+
+.accordion-content.active {
+    display: block;
 }
