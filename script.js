@@ -49,9 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const membersList = document.getElementById('members-list');
         data.forEach(member => {
             const listItem = document.createElement('li');
+            listItem.classList.add('member-item');
             listItem.innerHTML = `
                 <img src="${member.avatar_url}" alt="${member.login}" width="50">
-                <p><a href="${member.html_url}" target="_blank">${member.login}</a></p>
+                <div>
+                    <p><a href="${member.html_url}" target="_blank">${member.login}</a></p>
+                </div>
             `;
             membersList.appendChild(listItem);
         });
@@ -65,8 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const eventsList = document.getElementById('events-list');
         data.forEach(event => {
             const listItem = document.createElement('li');
+            listItem.classList.add('event-item');
             listItem.innerHTML = `
-                <p>${event.type} by <a href="${event.actor.url}" target="_blank">${event.actor.login}</a> at ${new Date(event.created_at).toLocaleString()}</p>
+                <div>
+                    <p><strong>Event Type:</strong> ${event.type}</p>
+                    <p><strong>Actor:</strong> <a href="${event.actor.url}" target="_blank">${event.actor.login}</a></p>
+                    <p><strong>Date:</strong> ${new Date(event.created_at).toLocaleString()}</p>
+                </div>
             `;
             eventsList.appendChild(listItem);
         });

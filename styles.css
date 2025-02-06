@@ -164,8 +164,31 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle card shadow */
 }
 
+#members-list, #events-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.member-item, .event-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #333; /* Dark border */
+    border-radius: 5px;
+    background-color: #1E1E1E; /* Darker background for items */
+    color: #E0E0E0; /* Light text color */
+}
+
+.member-item img, .event-item img {
+    margin-right: 10px;
+}
+
+.member-item div, .event-item div {
+    display: inline-block;
+    vertical-align: top;
+}
+
 a {
-    color: #03DAC6; /* Teal link color */
+    color: #BB86FC; /* Light purple link color */
     text-decoration: none;
     font-weight: bold; /* Make links bold */
 }
@@ -194,4 +217,13 @@ a:hover {
 
 .accordion-content.active {
     display: block;
+    padding: 1rem 0;
 }
+
+.members-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    list-style: none;
+}
+/* End of styles.css */
